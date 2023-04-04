@@ -19,16 +19,18 @@
     <div class="animes">
         
     </div>
-
         <form class="form">
-            <h3>Add new anime!</h3>
-            
+            <div class="form-header">
+            <h2>Add New Anime</h2>
+            <span></span><img id="exit-button" src="images/exit button.png" width="45px" height="45px"><span></span>
+            </div>
+
             <div>
                 <input
                 class="input"
                 type="text"
                 id="title"
-                placeholder="Title"
+                placeholder="TITLE"
                 required
                 />
             </div>
@@ -37,7 +39,7 @@
                 class="input"
                 type="text"
                 id="studio"
-                placeholder="Studio"
+                placeholder="STUDIO"
                 required
             />
             </div>
@@ -46,15 +48,15 @@
                 class="input"
                 type="number"
                 id="episodes"
-                placeholder="Episodes"
+                placeholder="EPISODES"
                 required
                 />
             </div>
             <div class="is-completed">
-                <label for="is-completed">Have you completed it?</label>
+                <label for="is-completed">Have You Completed It?</label>
                 <input class="checkbox" type="checkbox" id="isCompleted" />
             </div>
-              <button id="add-button" type="submit">Add</button>
+              <button id="add-button" type="submit">Add to Library</button>
         </form>
 
 

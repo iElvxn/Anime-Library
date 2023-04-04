@@ -43,4 +43,51 @@
     margin: 5px;
 }
 
-  
+.form {
+    display: flex;
+    flex-direction: column;
+    background-color: #161618;
+    align-items: center;
+    border-radius: 15px;
+    width: 300px;
+    font-family: sans-serif;
+    color: aliceblue;
+}
+
+.input,
+#add-button,
+.is-completed {
+    background-color: #161618;
+    font-size: 15px;
+    margin: 10px;
+    height: 25px;
+    border-radius: 7px;
+    border: 0px solid;
+    font-weight: 600;
+}
+
+#add-button {
+    background-color: #DDD0C8;
+    width: 70%;
+    height: 35px;
+}
+
+#add-book-button {
+    width: 100px;
+    height: 100px;
+    border-radius: 7px;
+}
+
+.form-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#exit-button {
+    margin-left: 20px;
+}
+
+input, select, textarea{
+    color: #7a7777;
+}
