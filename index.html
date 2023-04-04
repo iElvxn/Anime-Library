@@ -12,17 +12,16 @@
         Library
     </div>
 
-    <div id="add-book-button">
-        <button>+ Add anime</button> 
-    </div>
+    <button data-modal-target="#modal">+ Add anime</button> 
 
     <div class="animes">
         
     </div>
+    <div class="modal" id="modal">
         <form class="form">
             <div class="form-header">
             <h2>Add New Anime</h2>
-            <span></span><img id="exit-button" src="images/exit button.png" width="45px" height="45px"><span></span>
+            <button data-close-button class="close-button"><img id="exit-button" src="images/exit button.png" width="45px" height="45px"></button>
             </div>
 
             <div>
@@ -31,7 +30,7 @@
                 type="text"
                 id="title"
                 placeholder="TITLE"
-                required
+                
                 />
             </div>
             <div>
@@ -40,7 +39,7 @@
                 type="text"
                 id="studio"
                 placeholder="STUDIO"
-                required
+                
             />
             </div>
             <div>
@@ -49,15 +48,17 @@
                 type="number"
                 id="episodes"
                 placeholder="EPISODES"
-                required
+                
                 />
             </div>
             <div class="is-completed">
                 <label for="is-completed">Have You Completed It?</label>
                 <input class="checkbox" type="checkbox" id="isCompleted" />
             </div>
-              <button id="add-button" type="submit">Add to Library</button>
+                <button data-close-button id="add-button" type="submit">Add to Library</button>
         </form>
+    </div>
+    <div id="overlay"></div>
 
 
     <script src="./script.js"></script>

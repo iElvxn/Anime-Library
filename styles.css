@@ -49,7 +49,6 @@
     background-color: #161618;
     align-items: center;
     border-radius: 15px;
-    width: 300px;
     font-family: sans-serif;
     color: aliceblue;
 }
@@ -81,13 +80,50 @@
 .form-header {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    width:88%;
     align-items: center;
 }
-#exit-button {
-    margin-left: 20px;
-}
+
 
 input, select, textarea{
     color: #7a7777;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    z-index: 10;
+    width: 300px;
+    max-width: 80%;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.close-button {
+    background-color: transparent;
+    border: 0px;
+    cursor: pointer;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
 }

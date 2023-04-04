@@ -1,7 +1,35 @@
 const animes = document.querySelector('.animes');
-const addAnimeBtn = document.querySelector('#add-book-button');
-const addAnimeModal = document.getElementById('addAnimeModal');
-const formSubmitBtn = document.querySelector("#add-button");
+const openModalButtons = document.querySelectorAll('[data-modal-target');
+const closeModalButtons = document.querySelectorAll('[data-close-button');
+const overlay = document.getElementById('#overlay');
+const formSubmitBtn = document.querySelector('#add-button');
+
+openModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = document.querySelector(button.dataset.modalTarget);
+        openModal(modal);
+    })
+})
+
+closeModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = button.closest('.modal')
+        closeModal(modal);
+    })
+})
+
+function openModal(modal){
+    if(modal == null) return;
+    modal.classList.add('active');
+    overlay.classList.add('active');
+}
+
+function closeModal(modal){
+    if(modal == null) return;
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+}
+
 
 let myLibrary = [];
 
@@ -30,6 +58,12 @@ function addAnimeToLibrary() {
     myLibrary.push(anime);
     displayAnimes()
 
+    closeModalButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modal = button.closest('.modal')
+            closeModal(modal);
+        })
+    })
 }
 
 function displayAnimes() {
