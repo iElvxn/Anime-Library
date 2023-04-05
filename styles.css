@@ -2,8 +2,8 @@ body {
     font-family: 'Montserrat';
     margin: 0;
     padding: 0;
-    background-color: #000000
-    ;
+    background-color: #000000;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 .header {
@@ -17,6 +17,20 @@ body {
     color: aliceblue;
     font-size: 32px;
     ;
+}
+
+.footer {
+    font-weight: 500;
+    color: aliceblue;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 5px;
+
 }
 
 .logo,
