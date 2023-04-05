@@ -1,7 +1,8 @@
 const animes = document.querySelector('.animes');
+const form = document.querySelector('.form');
 const openModalButtons = document.querySelectorAll('[data-modal-target');
 const closeModalButtons = document.querySelectorAll('[data-close-button');
-const overlay = document.getElementById('#overlay');
+const overlay = document.querySelector('.overlay');
 const formSubmitBtn = document.querySelector('#add-button');
 
 openModalButtons.forEach(button => {
@@ -19,12 +20,14 @@ closeModalButtons.forEach(button => {
 })
 
 function openModal(modal){
+    event.preventDefault();
     if(modal == null) return;
     modal.classList.add('active');
     overlay.classList.add('active');
 }
 
 function closeModal(modal){
+    event.preventDefault();
     if(modal == null) return;
     modal.classList.remove('active');
     overlay.classList.remove('active');
@@ -53,6 +56,7 @@ function getAnimeFromInput() {
   }
 
 function addAnimeToLibrary() {
+    
     event.preventDefault();
     let anime = getAnimeFromInput();
     myLibrary.push(anime);
@@ -64,9 +68,11 @@ function addAnimeToLibrary() {
             closeModal(modal);
         })
     })
+    form.reset();
 }
 
 function displayAnimes() {
+    document.querySelector('.animes').innerHTML = "";
     myLibrary.forEach(animeInArray =>{
         const card = document.createElement('div');
         card.classList.add('card');
@@ -87,10 +93,35 @@ function displayAnimes() {
         cardEpisodes.innerHTML = 'Episodes: ' + animeInArray.episodes;
         card.appendChild(cardEpisodes);
 
-        const cardCompleted = document.createElement('div');
-        cardCompleted.classList.add('info');
-        cardCompleted.innerHTML = animeInArray.completed;
+        const cardCompleted = document.createElement('button');
+        cardCompleted.classList.add('completedBtn');
+        cardCompleted.innerHTML = completedOrNot(animeInArray);
         card.appendChild(cardCompleted);
 
+        cardCompleted.addEventListener('click', () => {
+            if(animeInArray.completed == false){
+                //try to change the color of the button
+            }
+            animeInArray.completed = !animeInArray.completed;
+            displayAnimes();
+        });
+
+        const removeBtn = document.createElement('button');
+        removeBtn.classList.add('anime-remove');
+        removeBtn.innerHTML = 'Remove';
+        card.appendChild(removeBtn);
+
+        removeBtn.addEventListener('click', () => {
+            myLibrary.splice(myLibrary.indexOf(animeInArray), 1);
+            displayAnimes();
+        });
     })
+}
+
+function completedOrNot(anime){
+    if(anime.completed === true){
+        return("Completed");
+    }else {
+        return("Incomplete")
+    }
 }

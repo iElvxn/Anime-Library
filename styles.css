@@ -1,22 +1,37 @@
+body {
+    font-family: 'Montserrat';
+    margin: 0;
+    padding: 0;
+    background-color: #000000
+    ;
+}
+
 .header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     background-color: #000000;
     align-items: center;
     font-weight: 1000;
-    padding: 5px;
+    padding: 7px;
     width: 100%;
     color: aliceblue;
-    font-size: 43px;
+    font-size: 32px;
+    ;
+}
+
+.logo,
+#open-modal {
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .animes {
+    margin-left: 20px;
+    margin-right: 20px;
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color: aquamarine;
-    border-radius: 10px;
 }
 
 .card {
@@ -24,19 +39,37 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    border: 5px solid black;
     border-radius: 25px;
     height: 300px;
     width: 250px;
     padding: 15px;
     margin: 20px;
-    background-color: #fbd082;
+    background-color: #161616;
+    color: rgb(241, 238, 238);
+    box-shadow: 0 0 15px 2px #a348e0;
+    font-weight: 700;
 }
 
 .info {
-    background-color: antiquewhite;
     padding: 16px;
     font-size: 24px;
+}
+
+.completedBtn,
+.anime-remove {
+    height: 10%;
+    width: 67%;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-weight: 900;
+    background-color: #a348e0;
+    border-radius: 5px;
+}
+
+button:hover,
+input[type='color']:hover {
+  transform: scale(1.07);
 }
 
 .input {
@@ -51,6 +84,7 @@
     border-radius: 15px;
     font-family: sans-serif;
     color: aliceblue;
+    font-family: 'Montserrat';
 }
 
 .input,
@@ -63,12 +97,14 @@
     border-radius: 7px;
     border: 0px solid;
     font-weight: 600;
+    font-family: 'Montserrat';
 }
 
 #add-button {
     background-color: #DDD0C8;
     width: 70%;
     height: 35px;
+    cursor: pointer;
 }
 
 #add-book-button {
@@ -111,7 +147,7 @@ input, select, textarea{
     cursor: pointer;
 }
 
-#overlay {
+.overlay {
     position: fixed;
     opacity: 0;
     transition: 200ms ease-in-out;
@@ -123,7 +159,13 @@ input, select, textarea{
     pointer-events: none;
 }
 
-#overlay.active {
+.overlay.active {
     opacity: 1;
     pointer-events: all;
+}
+
+#open-modal {
+    background-color: transparent;
+    border: 0px;
+    cursor: pointer;
 }

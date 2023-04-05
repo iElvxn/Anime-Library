@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library</title>
+    <title>Otaku Library</title>
     <link rel="stylesheet" href="./styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 </head>
 <body>
     <div class="header">
-        Library
+        <span class="logo">Otaku Library</span>
+        <button id="open-modal"data-modal-target="#modal"><img src="images/add button.png" width="45px" height="45px"></button>
     </div>
-
-    <button data-modal-target="#modal">+ Add anime</button> 
-
-    <div class="animes">
-        
+     
+    <div class="animes">   
     </div>
     <div class="modal" id="modal">
         <form class="form">
@@ -23,14 +22,12 @@
             <h2>Add New Anime</h2>
             <button data-close-button class="close-button"><img id="exit-button" src="images/exit button.png" width="45px" height="45px"></button>
             </div>
-
             <div>
                 <input
                 class="input"
                 type="text"
                 id="title"
                 placeholder="TITLE"
-                
                 />
             </div>
             <div>
@@ -39,7 +36,6 @@
                 type="text"
                 id="studio"
                 placeholder="STUDIO"
-                
             />
             </div>
             <div>
@@ -48,7 +44,6 @@
                 type="number"
                 id="episodes"
                 placeholder="EPISODES"
-                
                 />
             </div>
             <div class="is-completed">
@@ -58,9 +53,7 @@
                 <button data-close-button id="add-button" type="submit">Add to Library</button>
         </form>
     </div>
-    <div id="overlay"></div>
-
-
+    <div class="overlay"></div>
     <script src="./script.js"></script>
 </body>
 </html>
