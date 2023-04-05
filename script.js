@@ -94,16 +94,23 @@ function displayAnimes() {
         card.appendChild(cardEpisodes);
 
         const cardCompleted = document.createElement('button');
-        cardCompleted.classList.add('completedBtn');
+        cardCompleted.id = 'completedBtn'
         cardCompleted.innerHTML = completedOrNot(animeInArray);
+        completeBtnColorChanger(animeInArray, cardCompleted)
         card.appendChild(cardCompleted);
 
-        cardCompleted.addEventListener('click', () => {
-            if(animeInArray.completed == false){
-                //try to change the color of the button
+        function completeBtnColorChanger(anime, card){
+            if(anime.completed == false){
+                card.classList.add('orangeBtn');
+            }else{
+                card.classList.add('purpleBtn')
             }
+        }
+
+        cardCompleted.addEventListener('click', () => {
             animeInArray.completed = !animeInArray.completed;
             displayAnimes();
+            completeBtnColorChanger(animeInArray, cardCompleted)
         });
 
         const removeBtn = document.createElement('button');
